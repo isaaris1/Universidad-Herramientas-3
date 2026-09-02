@@ -29,7 +29,6 @@ Para garantizar un código limpio, estructurado y de alto rendimiento, el proyec
 *   **Secciones Estratégicas:**
     *   **Hero Section:** Introducción clara con un llamado a la acción (CTA) directo.
     *   **Características:** Desglose visual de lo que hace único a Quanty.
-    *   **Sobre SoftGirls:** Un espacio dedicado al grupo de estudio que hizo posible este desarrollo.
     *   **Contacto:** Formulario/enlaces para interactuar con el equipo de soporte o ventas.
 
 ---
