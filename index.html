@@ -1,10 +1,188 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-     <meta
-        name="description"
-        content="Quanty"
-    />
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quanty - Tus costos siempre claros.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Menú superior -->
+  <header class="header">
+    <div class="contenedor">
+      <p class="logo">Quanty</p>
+      <nav class="menu" aria-label="Menú principal">
+        <a href="#home">Home</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#especificaciones">Especificaciones</a>
+        <a href="#promociones">Promociones</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#indicadores">Indicadores</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="acciones">
+        <a href="#">Mi Cuenta</a>
+        <a href="#">Ayuda</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 1. Banner de arriba -->
+    <section class="home" id="home">
+      <div class="contenedor">
+        <h1>Lleve las cuentas de su negocio sin complicaciones</h1>
+        <p>Cree cotizaciones en minutos, controle su inventario y vea cuánto está ganando, todo en un solo lugar.</p>
+        <a href="#planes" class="boton">Comenzar gratis</a>
+      </div>
+    </section>
+
+    <!-- 2. Catálogo -->
+    <section class="catalogo" id="catalogo">
+      <div class="contenedor">
+        <h2>Lo que hace Quanty por usted</h2>
+
+        <article class="tarjeta">
+          <h3>Cotizaciones automáticas</h3>
+          <p>Elija los productos, escriba el cliente y Quanty calcula los precios e impuestos por usted.</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Control de inventario</h3>
+          <p>Registre sus productos una sola vez y Quanty le avisa cuando algo se está acabando.</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Reportes de ingresos</h3>
+          <p>Vea cuánto entró, cuánto gastó y cuánto le queda, sin abrir hojas de Excel.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Especificaciones (le corresponde a Isa) -->
+    <section class="especificaciones" id="especificaciones">
+      <div class="contenedor">
+        <h2>Especificaciones</h2>
+        <!-- Isa: aquí va la <dl> con dt/dd -->
+      </div>
+    </section>
+
+    <!-- 4. Promociones (le corresponde a Isa) -->
+    <section class="promociones" id="promociones">
+      <div class="contenedor">
+        <h2>Promociones</h2>
+        <!-- Isa: aquí va el <ol> -->
+      </div>
+    </section>
+
+    <!-- 5. Categorías (le corresponde a Isa) -->
+    <section class="categorias" id="categorias">
+      <div class="contenedor">
+        <h2>Categorías</h2>
+        <!-- Isa: aquí va el <ul> -->
+      </div>
+    </section>
+
+    <!-- 6. Dashboard (le corresponde a Isa) -->
+    <section class="indicadores" id="indicadores">
+      <div class="contenedor">
+        <h2>Indicadores</h2>
+        <!-- Isa: aquí van <progress> y <meter> -->
+      </div>
+    </section>
+
+    <!-- Planes -->
+    <section class="planes" id="planes">
+      <div class="contenedor">
+        <h2>Elija el plan que más le conviene</h2>
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th scope="col">Característica</th>
+              <th scope="col">Básico</th>
+              <th scope="col">Pro</th>
+              <th scope="col">Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Precio mensual</th>
+              <td>$29.900</td>
+              <td>$79.900</td>
+              <td>$149.900</td>
+            </tr>
+            <tr>
+              <th scope="row">Cotizaciones por mes</th>
+              <td>20</td>
+              <td>100</td>
+              <td>Ilimitadas</td>
+            </tr>
+            <tr>
+              <th scope="row">Soporte</th>
+              <td>Correo</td>
+              <td>WhatsApp</td>
+              <td>WhatsApp prioritario</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">Todos los precios incluyen IVA.</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <!-- 7. Contacto y registro -->
+    <section class="contacto" id="contacto">
+      <div class="contenedor">
+        <h2>Cree su cuenta y empecemos</h2>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Datos de contacto y cuenta</legend>
+
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono">
+
+            <label for="metodoPago">Método de pago</label>
+            <select id="metodoPago" name="metodoPago">
+              <option value="tarjeta">Tarjeta de crédito/débito</option>
+              <option value="pse">PSE</option>
+              <option value="nequi">Nequi</option>
+              <option value="transferencia">Transferencia bancaria</option>
+            </select>
+
+            <label for="instrucciones">Instrucciones adicionales de envío</label>
+            <textarea id="instrucciones" name="instrucciones" rows="3"></textarea>
+          </fieldset>
+
+          <button type="submit" class="boton">Crear mi cuenta</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="contenedor">
+      <p>&copy; 2026 Quanty</p>
+      <address>Medellín, Colombia</address>
+      <nav aria-label="Redes sociales">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">WhatsApp</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
 </html>
