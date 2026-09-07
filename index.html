@@ -171,11 +171,49 @@
       </div>
     </section>
 
-    <!-- 6. Dashboard (le corresponde a Isa) -->
+    <!-- 6. Dashboard -->
     <section class="indicadores" id="indicadores">
       <div class="contenedor">
-        <h2>Indicadores</h2>
-        <!-- Isa: aquí van <progress> y <meter> -->
+        <h2>¿Que verá en Quanty?</h2>
+        <p>Control sobre el inventario de sus insumos</p>
+        <label for="stock-insumo">Stock disponible:</label>
+        <progress id="stock-insumo" max="100" value="20">20%</progress>
+        <span>¡Solo quedan 20 unidades!</span>
+
+        <h2>Opiniones reales: Personas como usted <em>ya lo están usando</em></h2>
+
+        <!--Cliente 1-->
+        <p for="satisfaccion-cliente">
+            <strong>María Restrepo</strong> (Dueña de confección, Medellín): 
+            "Yo no sabía nada de computadores y aprendí en una tarde.
+             Ahora hago mis cotizaciones en cinco minutos y los clientes me dicen que se ven muy profesionales."
+        </p>
+        <meter id="satisfaccion-cliente" min="0" max="5" value="5" low="2" high="4" optimum="5">
+            5 de 5 estrellas
+        </meter>
+        <span>5 / 5 (Excelente)</span>
+        
+        <!--Cliente 2-->
+        <p for="satisfaccion-cliente">
+            <strong>Jorge Gómez</strong> (Ferretería familiar, Bogotá): 
+            "Antes perdía ventas porque no sabía qué tenía en bodega. Con Quanty siempre tengo 
+            la información a la mano y mis ganancias subieron un 20% este año."
+        </p>
+        <meter id="satisfaccion-cliente" min="0" max="5" value="5" low="2" high="4" optimum="5">
+            5 de 5 estrellas
+        </meter>
+        <span>5 / 5 (Excelente)</span>
+        
+         <!--Cliente 3-->
+        <p for="satisfaccion-cliente">
+            <strong>Luz Marina Cano</strong> (Panadería, Pereira): 
+            "Lo que más me gusta es que si tengo una duda llamo y me contestan rápido, 
+            en español, con paciencia. No me siento sola con la tecnología."
+        </p>
+        <meter id="satisfaccion-cliente" min="0" max="5" value="5" low="2" high="4" optimum="5">
+            5 de 5 estrellas
+        </meter>
+        <span>5 / 5 (Excelente)</span>
       </div>
     </section>
 
