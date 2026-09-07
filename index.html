@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+<!--Hecho por Isabella Aristizabal y Daniela Montoya-->
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quanty - Tus costos siempre claros.</title>
-  <link rel="stylesheet" href="syles.css">
+  <link rel="stylesheet" href="styles.css">
   <!--Favicon de la página-->
   <link rel="icon" type="image/png" href="images/logo-icon.png">
 </head>
@@ -30,13 +31,24 @@
     </div>
   </header>
 
-  <main>
+  <div class="menu-lateral">
+    <aside class ="lateral">
+      <img src="images/logo-icon.png" alt="Logo de Quanty">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#especificaciones">Especificaciones</a>
+      <a href="#promociones">Promociones</a>
+      <a href="#categorias">Categorías</a>
+      <a href="#indicadores">Indicadores</a>
+      <a href="#contacto">Contacto</a>
+    </aside>
+  </div>
 
+  <main>
     <!-- 1. Banner de arriba -->
     <section class="home" id="home">
       <div class="contenedor">
         <h1>Lleve las cuentas de su negocio sin complicaciones</h1>
-        <p>Cree cotizaciones en minutos, controle su inventario y vea cuánto está ganando, todo en un solo lugar.</p>
+        <p>Cree cotizaciones en minutos, controle su inventario y vea cuánto está ganando, todo en un solo lugar.</p> <br>
         <a href="#planes" class="boton">Comenzar gratis</a>
       </div>
     </section>
@@ -66,7 +78,7 @@
     <!-- 3. Especificaciones-->
     <section class="especificaciones" id="especificaciones">
       <div class="contenedor">
-        <h2>Tranquilidad para usted: <em>Su negocio esta en buenas manos</em></h2>
+        <h2>Tranquilidad para usted: <em>Su negocio esta en buenas manos</em></h2> <br>
        <dl>
         <!--Darle al usuario una lista de las caracteristicas de Quanty-->
             <dt><strong>Datos protegidos</strong> </dt>
@@ -97,7 +109,7 @@
     <section class="promociones" id="promociones">
       <div class="contenedor">
         <!--Instructivo para el usuario de como empezar a usar Quanty-->
-        <h2>Cómo empezar: <em>Listo en tres sencillos pasos</em></h2>
+        <h2>Cómo empezar: <em>Listo en tres sencillos pasos</em></h2> <br>
             <ol>
                 <li>
                     <strong>Cree su cuenta <em>gratis</em>:</strong>Solo necesita su correo electrónico. 
@@ -118,7 +130,7 @@
     <!-- 5. Categorías -->
     <section class="categorias" id="categorias">
       <div class="contenedor">
-        <h2>Lo que encontraras en Quanty</h2>
+        <h2>Lo que encontraras en Quanty</h2> <br>
         <!--Dashboard-->
         <h3 class="nombre_seccion"><strong>Dashboard</strong></h3>
         <ul class="descripcion_seccion">
@@ -174,7 +186,7 @@
     <!-- 6. Dashboard -->
     <section class="indicadores" id="indicadores">
       <div class="contenedor">
-        <h2>¿Que verá en Quanty?</h2>
+        <h2>¿Que verá en Quanty?</h2> <br>
         <p>Control sobre el inventario de sus insumos</p>
         <label for="stock-insumo">Stock disponible:</label>
         <progress id="stock-insumo" max="100" value="20">20%</progress>

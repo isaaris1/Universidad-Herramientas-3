@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #222;
   line-height: 1.5;
 }
@@ -32,21 +32,38 @@ body {
 }
 .menu a,
 .acciones a {
-  color: #fff;
+  color: #fffefe;
   margin-left: 15px;
   text-decoration: none;
 }
 
 /* MENÚ LATERAL */
-.lateral {
-  background: #f4f2fb;
-  padding: 20px;
+.menu-lateral {
+  position: fixed;
+  min-height: fit-content;
+  width: fit-content;
+  top: 30%;
+  background: #f7f6f6;
+  color:#000000;
+  padding: 20px 20px;
+  border-radius: 15px;
 }
-.lateral nav a {
-  display: block;
+.lateral a {
+  display: flex;
   margin-bottom: 10px;
-  color: #6c4fd6;
+  color: #000000;
   text-decoration: none;
+}
+.lateral a:hover {
+  color: #6c4fd6;
+  scale: 1.1;
+}
+
+.lateral img {
+  width: 75px;
+  height: 75px;
+  margin: 5px auto;
+  display: block;
 }
 
 /* HOME */
@@ -77,11 +94,13 @@ body {
 }
 .catalogo .contenedor {
   display: flex;
+  display: grid;
+  text-align: center;
   gap: 20px;
 }
 .tarjeta {
   flex: 1;
-  border: 1px solid #ddd;
+  border: 1px solid #ddd; 
   padding: 20px;
   border-radius: 6px;
 }
