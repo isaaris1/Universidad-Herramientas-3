@@ -275,7 +275,7 @@
     <section class="contacto" id="contacto">
       <div class="contenedor">
         <h2>Cree su cuenta y empecemos</h2>
-        <form action="#" method="post">
+        <form id="formulario">
           <fieldset>
             <legend>Datos de contacto y cuenta</legend>
 
@@ -288,21 +288,35 @@
             <label for="telefono">Teléfono</label>
             <input type="tel" id="telefono" name="telefono">
 
-            <label for="metodoPago">Método de pago</label>
-            <select id="metodoPago" name="metodoPago">
+            <label for="metodo-pago">Método de pago</label>
+            <select id="metodo-pago" name="metodo-pago">
               <option value="tarjeta">Tarjeta de crédito/débito</option>
               <option value="pse">PSE</option>
               <option value="nequi">Nequi</option>
               <option value="transferencia">Transferencia bancaria</option>
             </select>
 
-          </fieldset>
+            <button type="submit" class="boton">Crear mi cuenta</button>
 
-          <button type="submit" class="boton">Crear mi cuenta</button>
+          </fieldset>
         </form>
+        <section id="lista-usuarios" class="lista-usuarios">
+          <h2>Usuarios Nuevos</h2>
+          <table border="1" id="tabla-usuarios">
+              <thead>
+                  <tr>
+                      <th>Nombre</th>
+                      <th>Correo</th>
+                      <th>Teléfono</th>
+                      <th>Método de Pago</th>
+                  </tr>
+              </thead>
+              <tbody id="cuerpo-tabla">
+                  </tbody>
+          </table>
       </div>
     </section>
-
+    <script src="app.js"></script>
   </main>
 
   <!-- Footer -->
@@ -317,6 +331,8 @@
       </nav>
     </div>
   </footer>
+
+  
 
 </body>
 </html>
