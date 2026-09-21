@@ -33,10 +33,12 @@ class UsuarioView {
 
         usuarios.forEach(usuario => {
             const fila = `
-                <td>${usuario.nombre}</td>
-                <td>${usuario.correo}</td>
-                <td>${usuario.telefono}</td>
-                <td>${usuario.metodoPago}</td>
+                <tr>
+                    <td>${usuario.nombre}</td>
+                    <td>${usuario.correo}</td>
+                    <td>${usuario.telefono}</td>
+                    <td>${usuario.metodoPago}</td>
+                </tr>
             `;
             this.cuerpoTabla.innerHTML += fila;
         });

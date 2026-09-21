@@ -16,44 +16,46 @@ body {
   padding: 20px;
 }
 
-/* MENÚ SUPERIOR */
 .header {
   background: #6c4fd6;
   color: #fff;
 }
+
 .header .contenedor {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .logo {
   font-size: 1.4rem;
   font-weight: bold;
 }
-.menu a,
-.acciones a {
+
+.menu a, .acciones a {
   color: #fffefe;
   margin-left: 15px;
   text-decoration: none;
 }
 
-/* MENÚ LATERAL */
 .menu-lateral {
   position: fixed;
   min-height: fit-content;
   width: fit-content;
   top: 30%;
   background: #f7f6f6;
-  color:#000000;
+  color: #000000;
   padding: 20px 20px;
   border-radius: 15px;
 }
+
 .lateral a {
   display: flex;
   margin-bottom: 10px;
   color: #000000;
   text-decoration: none;
 }
+
 .lateral a:hover {
   color: #6c4fd6;
   scale: 1.1;
@@ -66,16 +68,17 @@ body {
   display: block;
 }
 
-/* HOME */
 .home {
   background: #f9f9f9;
   text-align: center;
   padding: 60px 0;
 }
+
 .home h1 {
   font-size: 2rem;
   margin-bottom: 15px;
 }
+
 .boton {
   display: inline-block;
   background: #6c4fd6;
@@ -92,24 +95,21 @@ body {
 .catalogo {
   padding: 40px 0;
 }
+
 .catalogo .contenedor {
-  display: flex;
   display: grid;
   text-align: center;
   gap: 20px;
 }
+
 .tarjeta {
   flex: 1;
-  border: 1px solid #ddd; 
+  border: 1px solid #ddd;
   padding: 20px;
   border-radius: 6px;
 }
 
-/* ESPECIFICACIONES / PROMOCIONES / CATEGORÍAS / INDICADORES */
-.especificaciones,
-.promociones,
-.categorias,
-.indicadores {
+.especificaciones, .promociones, .categorias, .indicadores {
   padding: 40px 0;
   background: #fafafa;
 }
@@ -118,43 +118,61 @@ body {
 .planes {
   padding: 40px 0;
 }
+
 .tabla {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
-.tabla th,
-.tabla td {
+
+.tabla th, .tabla td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
 }
+
 .tabla thead {
   background: #6c4fd6;
   color: #fff;
 }
+
 .tabla tfoot td {
   font-style: italic;
   font-size: 0.9rem;
 }
 
-/* CONTACTO */
 .contacto {
   position: relative;
   padding: 40px 0;
   background: #f4f2fb;
 }
-.contacto form {
-  max-width: 500px;
+
+.contacto .contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  align-items: start;
 }
+
+.contacto .contenedor > h2 {
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 0;
+}
+
+.contacto form {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+}
+
 .contacto label {
   display: block;
   margin-top: 15px;
   margin-bottom: 5px;
 }
-.contacto input,
-.contacto select,
-.contacto textarea {
+
+.contacto input, .contacto select, .contacto textarea {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -162,7 +180,7 @@ body {
 }
 
 .contacto button {
-  margin: 15px;
+  margin-top: 15px;
   cursor: pointer;
 }
 
@@ -171,33 +189,66 @@ fieldset {
   padding: 15px;
   border-radius: 6px;
 }
+
 legend {
   padding: 0 8px;
   font-weight: bold;
 }
 
-/* FOOTER */
+/* 4. Lista y tabla a la derecha */
+.lista-usuarios {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  position: static;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.lista-usuarios table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 15px;
+}
+
+.lista-usuarios th, .lista-usuarios td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.lista-usuarios th {
+  background-color: #6c4fd6;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.lista-usuarios tr:hover {
+  background-color: #f9f8fd;
+}
+
+.lista-usuarios tr:last-child td {
+  border-bottom: none;
+}
+
 .footer {
   background: #222;
   color: #fff;
   padding: 20px 0;
   text-align: center;
 }
+
 .footer address {
   font-style: normal;
   margin: 10px 0;
 }
+
 .footer nav a {
   color: #fff;
   margin: 0 8px;
   text-decoration: none;
-}
-
-.lista-usuarios {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin: 60px;
 }
