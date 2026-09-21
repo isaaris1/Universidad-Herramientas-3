@@ -140,6 +140,7 @@ body {
 
 /* CONTACTO */
 .contacto {
+  position: relative;
   padding: 40px 0;
   background: #f4f2fb;
 }
@@ -159,6 +160,12 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.contacto button {
+  margin: 15px;
+  cursor: pointer;
+}
+
 fieldset {
   border: 1px solid #ccc;
   padding: 15px;
@@ -184,4 +191,13 @@ legend {
   color: #fff;
   margin: 0 8px;
   text-decoration: none;
+}
+
+.lista-usuarios {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 60px;
 }
