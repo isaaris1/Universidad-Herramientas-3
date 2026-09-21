@@ -91,7 +91,6 @@ body {
   font-size: 1rem;
 }
 
-/* CATÁLOGO */
 .catalogo {
   padding: 40px 0;
 }
@@ -114,7 +113,6 @@ body {
   background: #fafafa;
 }
 
-/* PLANES */
 .planes {
   padding: 40px 0;
 }
@@ -195,7 +193,6 @@ legend {
   font-weight: bold;
 }
 
-/* 4. Lista y tabla a la derecha */
 .lista-usuarios {
   grid-column: 2;
   grid-row: 1 / span 2;
