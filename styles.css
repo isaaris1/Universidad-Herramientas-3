@@ -47,6 +47,7 @@ body {
   color: #000000;
   padding: 20px 20px;
   border-radius: 15px;
+  z-index: 9999; /*Mantiene la barra  lateral encima de todas las secciones*/
 }
 
 .lateral a {
