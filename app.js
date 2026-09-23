@@ -1,3 +1,10 @@
+const botonForm =document.getElementById('botonForm');
+botonForm.addEventListener('click',()=>
+ {
+    console.log("El formulario ha enviado correctamente(Ha dado clic al boton)");
+ }
+);
+
 class UsuarioModel {
     constructor() {
         this.usuarios = [];
