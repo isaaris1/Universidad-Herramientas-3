@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Botones de pasta de varios colores">
+  <defs>
+    <!-- Los cuatro huecos de un botón -->
+    <g id="huecos" fill="#f1eefb">
+      <circle cx="-11" cy="-11" r="6"/>
+      <circle cx="11" cy="-11" r="6"/>
+      <circle cx="-11" cy="11" r="6"/>
+      <circle cx="11" cy="11" r="6"/>
+    </g>
+  </defs>
+  <rect width="640" height="420" fill="#f1eefb"/>
+  <circle cx="200" cy="150" r="58" fill="#6c4fd6"/>
+  <circle cx="200" cy="150" r="42" fill="none" stroke="#9a84e8" stroke-width="4"/>
+  <use href="#huecos" x="200" y="150"/>
+  <circle cx="345" cy="120" r="46" fill="#e8a33d"/>
+  <use href="#huecos" x="345" y="120"/>
+  <circle cx="455" cy="205" r="62" fill="#3f5f9a"/>
+  <circle cx="455" cy="205" r="46" fill="none" stroke="#7d97c9" stroke-width="4"/>
+  <use href="#huecos" x="455" y="205"/>
+  <circle cx="300" cy="270" r="54" fill="#c9566b"/>
+  <use href="#huecos" x="300" y="270"/>
+  <circle cx="170" cy="300" r="40" fill="#4a9a7a"/>
+  <use href="#huecos" x="170" y="300"/>
+</svg>

@@ -5,23 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quanty - Tus costos siempre claros.</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/estilos.css">
   <!--Favicon de la página-->
-  <link rel="icon" type="image/png" href="images/logo-icon.png">
+  <link rel="icon" type="image/png" href="img/logo-icon.png">
 </head>
 <body>
 
-  <!-- Menú superior -->
+  <!-- Menú superior: el único h1 de la página y los enlaces a las secciones -->
   <header class="header">
     <div class="contenedor">
-      <p class="logo">Quanty</p>
+      <h1 class="logo">Quanty</h1>
       <nav class="menu" aria-label="Menú principal">
         <a href="#home">Home</a>
+        <a href="#inventario">Inventario</a>
+        <a href="#resumen">Resumen</a>
         <a href="#catalogo">Catálogo</a>
         <a href="#especificaciones">Especificaciones</a>
         <a href="#promociones">Promociones</a>
         <a href="#categorias">Categorías</a>
         <a href="#indicadores">Indicadores</a>
+        <a href="#planes">Planes</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <div class="acciones">
@@ -31,25 +34,110 @@
     </div>
   </header>
 
-  <div class="menu-lateral">
-    <aside class ="lateral">
-      <img src="images/logo-icon.png" alt="Logo de Quanty">
-      <a href="#catalogo">Catálogo</a>
-      <a href="#especificaciones">Especificaciones</a>
-      <a href="#promociones">Promociones</a>
-      <a href="#categorias">Categorías</a>
-      <a href="#indicadores">Indicadores</a>
-      <a href="#contacto">Contacto</a>
-    </aside>
-  </div>
+  <!-- Dos columnas: barra lateral y contenido -->
+  <div class="pagina">
+
+  <!-- Barra lateral: filtros por categoría y resumen del inventario -->
+  <aside class="lateral" aria-label="Filtros y resumen">
+    <img src="img/logo-icon.png" alt="Logo de Quanty">
+
+    <!-- JavaScript crea aquí los botones de categoría -->
+    <section class="lateral-bloque">
+      <h2 class="lateral-titulo">Categorías</h2>
+      <ul class="filtros" id="listaFiltros"></ul>
+    </section>
+
+    <!-- JavaScript escribe aquí los totales -->
+    <section class="lateral-bloque">
+      <h2 class="lateral-titulo">Resumen</h2>
+      <dl class="datos">
+        <div class="datos-fila"><dt>Insumos</dt><dd id="resumenTotal">0</dd></div>
+        <div class="datos-fila"><dt>Agotados</dt><dd id="resumenAgotados">0</dd></div>
+        <div class="datos-fila"><dt>Unidades</dt><dd id="resumenUnidades">0</dd></div>
+        <div class="datos-fila"><dt>Valor del inventario</dt><dd id="resumenValor">$ 0</dd></div>
+      </dl>
+    </section>
+  </aside>
 
   <main>
     <!-- 1. Banner de arriba -->
     <section class="home" id="home">
       <div class="contenedor">
-        <h1>Lleve las cuentas de su negocio sin complicaciones</h1>
+        <h2>Lleve las cuentas de su negocio sin complicaciones</h2>
         <p>Cree cotizaciones en minutos, controle su inventario y vea cuánto está ganando, todo en un solo lugar.</p> <br>
         <a href="#planes" class="boton">Comenzar gratis</a>
+      </div>
+    </section>
+
+    <!-- Inventario: formulario para agregar, buscador y tarjetas -->
+    <section class="inventario" id="inventario">
+      <div class="contenedor">
+        <h2>Pruebe el inventario de Quanty</h2>
+        <p>Este es el inventario de insumos de un taller de confección. Agregue, busque, filtre y elimine insumos para ver cómo trabaja Quanty.</p>
+
+        <!-- novalidate: este formulario lo revisa JavaScript, no el navegador -->
+        <form class="form-insumo" id="formInsumo" novalidate>
+          <fieldset>
+            <legend>Agregar un insumo</legend>
+
+            <div class="campo">
+              <label for="insumoNombre">Nombre del insumo *</label>
+              <input type="text" id="insumoNombre" name="nombre" placeholder="Ej. Tela de lino" autocomplete="off">
+            </div>
+
+            <div class="campo">
+              <label for="insumoCosto">Costo unitario en pesos *</label>
+              <input type="number" id="insumoCosto" name="costo" placeholder="Ej. 12500" min="50" step="50">
+            </div>
+
+            <div class="campo">
+              <label for="insumoCantidad">Cantidad en bodega *</label>
+              <input type="number" id="insumoCantidad" name="cantidad" placeholder="Ej. 20" min="0" step="1">
+            </div>
+
+            <div class="campo">
+              <label for="insumoCategoria">Categoría *</label>
+              <!-- JavaScript llena las opciones -->
+              <select id="insumoCategoria" name="categoria"></select>
+            </div>
+
+            <button type="submit" class="boton">Guardar insumo</button>
+          </fieldset>
+        </form>
+
+        <!-- Aquí aparecen los mensajes de error o de éxito -->
+        <p class="mensaje" id="mensajeInsumo" aria-live="polite"></p>
+
+        <div class="buscador">
+          <label for="buscador">Buscar insumo por nombre</label>
+          <input type="search" id="buscador" placeholder="Escriba para filtrar">
+          <p class="buscador-contador" id="contador">0 resultados</p>
+        </div>
+
+        <!-- Vacío a propósito: JavaScript pone aquí las tarjetas -->
+        <div class="insumos" id="listaInsumos"></div>
+      </div>
+    </section>
+
+    <!-- Tabla resumen: JavaScript llena las filas -->
+    <section class="resumen" id="resumen">
+      <div class="contenedor">
+        <h2>Resumen del inventario</h2>
+        <div class="tabla-contenedor">
+          <table class="tabla">
+            <caption>Existencias por insumo, actualizadas al agregar o eliminar</caption>
+            <thead>
+              <tr>
+                <th scope="col">Insumo</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Costo unitario</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody id="cuerpoInventario"></tbody>
+          </table>
+        </div>
       </div>
     </section>
 
@@ -233,6 +321,7 @@
     <section class="planes" id="planes">
       <div class="contenedor">
         <h2>Elija el plan que más le conviene</h2>
+        <div class="tabla-contenedor">
         <table class="tabla">
           <thead>
             <tr>
@@ -268,6 +357,7 @@
             </tr>
           </tfoot>
         </table>
+        </div>
       </div>
     </section>
 
@@ -275,49 +365,56 @@
     <section class="contacto" id="contacto">
       <div class="contenedor">
         <h2>Cree su cuenta y empecemos</h2>
-        <form id="formulario">
+        <!-- Aquí el navegador revisa los campos: required, type, pattern y minlength -->
+        <form id="formContacto">
           <fieldset>
             <legend>Datos de contacto y cuenta</legend>
 
-            <label for="nombre">Nombre completo</label>
-            <input type="text" id="nombre" name="nombre" required>
+            <label for="contactoNombre">Nombre completo *</label>
+            <input type="text" id="contactoNombre" name="nombre" required minlength="5" placeholder="Ana Ruiz Gómez">
 
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" required>
+            <label for="contactoCorreo">Correo electrónico *</label>
+            <input type="email" id="contactoCorreo" name="correo" required placeholder="nombre@correo.com">
 
-            <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono">
+            <!-- Exige 10 números -->
+            <label for="contactoTelefono">Teléfono (10 dígitos) *</label>
+            <input type="tel" id="contactoTelefono" name="telefono" required pattern="[0-9]{10}" placeholder="3001234567">
 
-            <label for="metodo-pago">Método de pago</label>
-            <select id="metodo-pago" name="metodo-pago">
+            <label for="contactoPago">Método de pago</label>
+            <select id="contactoPago" name="metodoPago">
               <option value="tarjeta">Tarjeta de crédito/débito</option>
               <option value="pse">PSE</option>
               <option value="nequi">Nequi</option>
               <option value="transferencia">Transferencia bancaria</option>
             </select>
 
-            <button type="submit" class="boton" id="botonForm">Crear mi cuenta</button>
+            <button type="submit" class="boton">Crear mi cuenta</button>
 
           </fieldset>
+
+          <!-- Aquí aparece el mensaje de confirmación -->
+          <p class="mensaje" id="mensajeContacto" aria-live="polite"></p>
         </form>
-        <section id="lista-usuarios" class="lista-usuarios">
+        <section id="listaUsuarios" class="lista-usuarios">
           <h2>Usuarios Nuevos</h2>
-          <table border="1" id="tabla-usuarios">
+          <table>
               <thead>
                   <tr>
-                      <th>Nombre</th>
-                      <th>Correo</th>
-                      <th>Teléfono</th>
-                      <th>Método de Pago</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Correo</th>
+                      <th scope="col">Teléfono</th>
+                      <th scope="col">Método de Pago</th>
                   </tr>
               </thead>
-              <tbody id="cuerpo-tabla">
-                  </tbody>
+              <!-- JavaScript agrega una fila por cada cuenta creada -->
+              <tbody id="cuerpoUsuarios"></tbody>
           </table>
+        </section>
       </div>
     </section>
-    <script src="app.js"></script>
   </main>
+
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -332,7 +429,7 @@
     </div>
   </footer>
 
-  
-
+  <!-- El JavaScript al final para que la página ya exista cuando el código la busque -->
+  <script src="js/app.js"></script>
 </body>
 </html>

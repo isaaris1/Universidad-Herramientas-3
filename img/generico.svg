@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Caja de insumo sin foto">
+  <rect width="640" height="420" fill="#f1eefb"/>
+  <!-- Caja -->
+  <rect x="200" y="170" width="240" height="180" rx="10" fill="#b9a7f0"/>
+  <!-- Tapa -->
+  <path d="M184 120 H456 L440 170 H200 Z" fill="#9a84e8"/>
+  <!-- Cinta de embalaje -->
+  <rect x="296" y="120" width="48" height="230" fill="#6c4fd6" opacity=".55"/>
+  <!-- Etiqueta -->
+  <rect x="226" y="286" width="56" height="40" rx="4" fill="#fbf7ee"/>
+</svg>

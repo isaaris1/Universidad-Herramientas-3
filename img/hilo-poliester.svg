@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Cono de hilo poliéster">
+  <rect width="640" height="420" fill="#f1eefb"/>
+  <!-- Base y tubo del cono -->
+  <ellipse cx="320" cy="332" rx="132" ry="24" fill="#cfc6ee"/>
+  <rect x="292" y="58" width="56" height="40" rx="8" fill="#e9e3d6" stroke="#b3a48a" stroke-width="3"/>
+  <!-- Hilo enrollado -->
+  <path d="M270 92 H370 L420 322 H220 Z" fill="#6c4fd6"/>
+  <path d="M259 142 H381 M248 192 H392 M237 242 H403 M226 292 H414" stroke="#9a84e8" stroke-width="5" stroke-linecap="round"/>
+  <!-- Hebra suelta -->
+  <path d="M372 104 C440 110 470 170 440 230 C420 270 470 300 500 280" fill="none" stroke="#6c4fd6" stroke-width="4" stroke-linecap="round"/>
+</svg>

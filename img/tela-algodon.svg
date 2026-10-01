@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Telas de algodón dobladas">
+  <rect width="640" height="420" fill="#f1eefb"/>
+  <!-- Tres telas dobladas, una sobre otra -->
+  <rect x="140" y="252" width="360" height="74" rx="20" fill="#d9cdb8" stroke="#b3a48a" stroke-width="3"/>
+  <rect x="158" y="184" width="324" height="74" rx="20" fill="#ece3d2" stroke="#b3a48a" stroke-width="3"/>
+  <rect x="176" y="116" width="288" height="74" rx="20" fill="#fbf7ee" stroke="#b3a48a" stroke-width="3"/>
+  <!-- Pliegues -->
+  <path d="M200 153 H440 M182 221 H458 M164 289 H476" stroke="#b3a48a" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 10"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Rollo de tela jean">
+  <rect width="640" height="420" fill="#f1eefb"/>
+  <!-- Rollo de tela -->
+  <rect x="130" y="140" width="340" height="150" rx="14" fill="#3f5f9a"/>
+  <ellipse cx="470" cy="215" rx="40" ry="75" fill="#5878b6"/>
+  <ellipse cx="470" cy="215" rx="15" ry="28" fill="#2b4472"/>
+  <!-- Costuras naranjas del jean -->
+  <path d="M146 162 H438 M146 268 H438" stroke="#e8a33d" stroke-width="4" stroke-linecap="round" stroke-dasharray="14 10"/>
+</svg>

@@ -1,0 +1,535 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.5;
+}
+
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background: #6c4fd6;
+  color: #fff;
+}
+
+.header .contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  max-width: 1300px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.menu a, .acciones a {
+  color: #fffefe;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+/* Dos columnas: barra lateral a la izquierda y contenido a la derecha */
+.pagina {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  align-items: start;
+}
+
+/* La barra lateral se queda quieta al bajar */
+.lateral {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #f7f6f6;
+  color: #000000;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.lateral img {
+  width: 75px;
+  height: 75px;
+  margin: 5px auto;
+  display: block;
+}
+
+.lateral-titulo {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.filtros {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Botón de cada categoría */
+.filtro {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: #222;
+  font-family: inherit;
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.filtro:hover {
+  background: #ece8fa;
+}
+
+.datos-fila {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.9rem;
+  padding: 6px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.datos-fila:last-child {
+  border-bottom: none;
+}
+
+.datos-fila dd {
+  font-weight: bold;
+  text-align: right;
+}
+
+.home {
+  background: #f9f9f9;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.home h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.boton {
+  display: inline-block;
+  background: #6c4fd6;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* INVENTARIO: formulario, buscador y tarjetas */
+.inventario, .resumen {
+  padding: 40px 0;
+}
+
+.inventario h2, .resumen h2 {
+  margin-bottom: 10px;
+}
+
+.form-insumo {
+  margin-top: 20px;
+}
+
+/* Los campos del formulario se acomodan en columnas según el ancho */
+.form-insumo fieldset {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  align-items: end;
+}
+
+.campo label, .buscador label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.campo input, .campo select, .buscador input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.buscador {
+  margin: 25px 0 15px;
+  max-width: 420px;
+}
+
+.buscador-contador {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Las tarjetas se acomodan solas según el ancho */
+.insumos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjeta de un insumo */
+.insumo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.insumo-imagen {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.insumo-categoria {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.insumo-nombre {
+  font-size: 1.05rem;
+}
+
+.insumo-costo {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #6c4fd6;
+}
+
+.insumo-estado {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #1b7a4b;
+}
+
+/* El botón de eliminar siempre queda abajo */
+.boton-eliminar {
+  margin-top: auto;
+  background: transparent;
+  color: #b3261e;
+  border: 1px solid #b3261e;
+  font-size: 0.9rem;
+}
+
+.boton-eliminar:hover {
+  background: #b3261e;
+  color: #fff;
+}
+
+/* La tabla se desplaza hacia los lados si no cabe */
+.tabla-contenedor {
+  overflow-x: auto;
+}
+
+.tabla caption {
+  text-align: left;
+  font-size: 0.9rem;
+  color: #555;
+  padding-bottom: 8px;
+}
+
+/* CATÁLOGO */
+.catalogo {
+  padding: 40px 0;
+}
+
+.catalogo .contenedor {
+  display: grid;
+  text-align: center;
+  gap: 20px;
+}
+
+.tarjeta {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.especificaciones, .promociones, .categorias, .indicadores {
+  padding: 40px 0;
+  background: #fafafa;
+}
+
+/* PLANES */
+.planes {
+  padding: 40px 0;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabla th, .tabla td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.tabla thead {
+  background: #6c4fd6;
+  color: #fff;
+}
+
+.tabla tfoot td {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.contacto {
+  position: relative;
+  padding: 40px 0;
+  background: #f4f2fb;
+}
+
+.contacto .contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  align-items: start;
+}
+
+.contacto .contenedor > h2 {
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 0;
+}
+
+.contacto form {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+}
+
+.contacto label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.contacto input, .contacto select, .contacto textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.contacto button {
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: bold;
+}
+
+/* 4. Lista y tabla a la derecha */
+.lista-usuarios {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  position: static;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.lista-usuarios table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 15px;
+}
+
+.lista-usuarios th, .lista-usuarios td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.lista-usuarios th {
+  background-color: #6c4fd6;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.lista-usuarios tr:hover {
+  background-color: #f9f8fd;
+}
+
+.lista-usuarios tr:last-child td {
+  border-bottom: none;
+}
+
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer address {
+  font-style: normal;
+  margin: 10px 0;
+}
+
+.footer nav a {
+  color: #fff;
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+/* PANTALLAS PEQUEÑAS */
+
+/* En tableta y teléfono la barra lateral pasa arriba del contenido */
+@media (max-width: 900px) {
+  .pagina {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lateral {
+    position: static;
+  }
+
+  /* El formulario de contacto y la tabla de usuarios quedan uno debajo del otro */
+  .contacto .contenedor {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contacto .contenedor > h2, .contacto form, .lista-usuarios {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .lista-usuarios {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .header .contenedor {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu a, .acciones a {
+    display: inline-block;
+    margin: 0 15px 5px 0;
+  }
+
+  .pagina {
+    padding: 10px;
+  }
+}
+
+/* CLASES QUE ACTIVA JAVASCRIPT
+   JavaScript solo pone o quita estas clases. Aquí se decide cómo se ven */
+
+/* Insumo agotado */
+.insumo-agotado {
+  opacity: 0.75;
+  border-style: dashed;
+}
+
+.insumo-agotado .insumo-estado {
+  color: #b3261e;
+}
+
+/* Quedan pocas unidades */
+.insumo-stock-bajo .insumo-estado {
+  color: #9a5b00;
+}
+
+/* Categoría elegida en la barra lateral */
+.filtro-activo {
+  background: #e3dcf9;
+  border-color: #6c4fd6;
+  font-weight: bold;
+}
+
+/* Mensajes de éxito y de error */
+.mensaje {
+  min-height: 1.5em;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.mensaje-error {
+  color: #b3261e;
+}
+
+.mensaje-exito {
+  color: #1b7a4b;
+}
+
+/* Campo con error */
+.campo .campo-error {
+  border-color: #b3261e;
+  background: #fdf1f0;
+}
+
+/* Fila de un insumo agotado en la tabla */
+.fila-agotada td {
+  color: #b3261e;
+}
+
+/* Aviso cuando no hay resultados */
+.estado-vacio {
+  grid-column: 1 / -1;
+  padding: 30px;
+  text-align: center;
+  color: #555;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+}
