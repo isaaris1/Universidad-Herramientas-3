@@ -240,9 +240,47 @@ body {
   color: #1b7a4b;
 }
 
-/* El botón de eliminar siempre queda abajo */
-.boton-eliminar {
+/* Botones de guardar y cancelar del formulario */
+.form-botones {
+  display: flex;
+  gap: 10px;
+}
+
+/* El atributo hidden debe ganarle a display: inline-block de .boton */
+.boton[hidden] {
+  display: none;
+}
+
+.boton-secundario {
+  background: transparent;
+  color: #6c4fd6;
+  border: 1px solid #6c4fd6;
+}
+
+/* Los botones de editar y eliminar siempre quedan abajo */
+.insumo-acciones {
   margin-top: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.insumo-acciones .boton {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.boton-editar {
+  background: transparent;
+  color: #6c4fd6;
+  border: 1px solid #6c4fd6;
+}
+
+.boton-editar:hover {
+  background: #6c4fd6;
+  color: #fff;
+}
+
+.boton-eliminar {
   background: transparent;
   color: #b3261e;
   border: 1px solid #b3261e;
@@ -517,6 +555,12 @@ legend {
 .campo .campo-error {
   border-color: #b3261e;
   background: #fdf1f0;
+}
+
+/* Formulario mientras se edita un insumo */
+.form-editando fieldset {
+  border-color: #6c4fd6;
+  background: #f6f3fe;
 }
 
 /* Fila de un insumo agotado en la tabla */
