@@ -4,6 +4,21 @@
   padding: 0;
 }
 
+/* Medidas y capas de la estructura fija.
+   --alto-header es un valor de respaldo: JavaScript lo actualiza con la altura real */
+:root {
+  --alto-header: 64px;
+  --ancho-lateral: 250px;
+  --capa-lateral: 100;
+  --capa-footer: 200;
+  --capa-header: 300;
+}
+
+/* Los enlaces del menú no quedan tapados por el header fijo */
+html {
+  scroll-padding-top: var(--alto-header);
+}
+
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #222;
@@ -17,53 +32,115 @@ body {
   padding: 20px;
 }
 
+/* El header se queda arriba al hacer scroll y queda por encima de la barra lateral */
 .header {
-  background: #6c4fd6;
+  position: sticky;
+  top: 0;
+  z-index: var(--capa-header);
+  background: linear-gradient(90deg, #6c4fd6, #7b5fe0);
   color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
+/* Una sola fila: logo a la izquierda, menú en el centro y acciones a la derecha */
 .header .contenedor {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  max-width: 1300px;
+  gap: 24px;
+  max-width: none;
+  min-height: 60px;
+  padding: 0 24px;
 }
 
 .logo {
-  font-size: 1.4rem;
+  flex-shrink: 0;
+  font-size: 1.5rem;
   font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+/* El menú ocupa el espacio que sobra. Si no cabe, se desplaza sin barra visible */
+.menu {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
 }
 
 .menu a, .acciones a {
   color: #fffefe;
-  margin-left: 15px;
   text-decoration: none;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  transition: background 0.15s, color 0.15s;
 }
 
-/* Dos columnas: barra lateral a la izquierda y contenido a la derecha */
+.menu a {
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.menu a:hover, .menu a:focus-visible, .acciones a:last-child:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.acciones {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 8px;
+}
+
+.acciones a {
+  padding: 7px 14px;
+  border-radius: 999px;
+}
+
+/* "Mi Cuenta" es el botón principal; "Ayuda" es un enlace discreto */
+.acciones a:first-child {
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.acciones a:first-child:hover, .acciones a:first-child:focus-visible {
+  background: #fff;
+  color: #6c4fd6;
+}
+
+.header a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* El contenido deja libre a la izquierda el espacio de la barra lateral fija */
 .pagina {
-  display: grid;
-  grid-template-columns: 250px minmax(0, 1fr);
-  gap: 20px;
-  max-width: 1300px;
-  margin: 0 auto;
+  margin-left: var(--ancho-lateral);
   padding: 20px;
-  align-items: start;
 }
 
-/* La barra lateral se queda quieta al bajar */
+/* La barra lateral ocupa todo el alto de la ventana y no se mueve al hacer scroll.
+   Va por debajo del header y del footer. El padding de arriba evita que
+   su contenido quede escondido detrás del header */
 .lateral {
-  position: sticky;
-  top: 20px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--capa-lateral);
+  width: var(--ancho-lateral);
   display: flex;
   flex-direction: column;
   gap: 15px;
   background: #f7f6f6;
   color: #000000;
-  padding: 20px;
-  border-radius: 15px;
+  padding: calc(var(--alto-header) + 20px) 20px 20px;
+  border-right: 1px solid #e2e0e0;
+  overflow-y: auto;
 }
 
 .lateral img {
@@ -450,7 +527,10 @@ legend {
   border-bottom: none;
 }
 
+/* El footer solo se ve al final de la página y tapa la barra lateral */
 .footer {
+  position: relative;
+  z-index: var(--capa-footer);
   background: #222;
   color: #fff;
   padding: 20px 0;
@@ -470,14 +550,43 @@ legend {
 
 /* PANTALLAS PEQUEÑAS */
 
-/* En tableta y teléfono la barra lateral pasa arriba del contenido */
+/* En tableta y teléfono no hay espacio para una barra fija:
+   la barra lateral pasa arriba del contenido (el header sigue fijo) */
 @media (max-width: 900px) {
+  /* Fila 1: logo y acciones. Fila 2: menú con desplazamiento horizontal */
+  .header .contenedor {
+    flex-wrap: wrap;
+    gap: 0 16px;
+    min-height: 0;
+    padding: 8px 16px;
+  }
+
+  .logo {
+    order: 1;
+    margin-right: auto;
+  }
+
+  .acciones {
+    order: 2;
+  }
+
+  .menu {
+    order: 3;
+    flex: 1 1 100%;
+    margin-top: 4px;
+  }
+
   .pagina {
-    grid-template-columns: minmax(0, 1fr);
+    margin-left: 0;
   }
 
   .lateral {
     position: static;
+    width: auto;
+    padding: 20px;
+    border-right: none;
+    border-radius: 15px;
+    overflow-y: visible;
   }
 
   /* El formulario de contacto y la tabla de usuarios quedan uno debajo del otro */
@@ -496,14 +605,12 @@ legend {
 }
 
 @media (max-width: 640px) {
-  .header .contenedor {
-    flex-direction: column;
-    align-items: flex-start;
+  .logo {
+    font-size: 1.3rem;
   }
 
-  .menu a, .acciones a {
-    display: inline-block;
-    margin: 0 15px 5px 0;
+  .acciones a {
+    padding: 6px 12px;
   }
 
   .pagina {

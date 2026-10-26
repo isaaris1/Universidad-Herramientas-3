@@ -212,6 +212,7 @@ formContacto.addEventListener("submit", function (evento) {
    --------------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", function () {
   cargar();
+  ajustarAlturaHeader();
   llenarCategorias(CATEGORIAS);
   actualizarPantalla();
 

@@ -12,6 +12,9 @@
    1. Referencias a los elementos de la página
    --------------------------------------------------------------------- */
 
+// El header fijo y la barra lateral necesitan saber cuánto mide el header
+const header = document.querySelector(".header");
+
 // Elementos del formulario de insumos
 const formInsumo = document.querySelector("#formInsumo");
 const tituloFormulario = document.querySelector("#tituloFormulario");
@@ -66,6 +69,17 @@ function formatearPesos(valor) {
     currency: "COP",
     maximumFractionDigits: 0
   });
+}
+
+// Guarda la altura real del header en la variable CSS --alto-header.
+// Se vuelve a medir cuando el header cambia de tamaño (por ejemplo, el menú pasa a dos líneas)
+function ajustarAlturaHeader() {
+  const actualizar = () => {
+    document.documentElement.style.setProperty("--alto-header", `${header.offsetHeight}px`);
+  };
+
+  actualizar();
+  new ResizeObserver(actualizar).observe(header);
 }
 
 // Escribe un mensaje verde (éxito) o rojo (error) en la página
